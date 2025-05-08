@@ -36,11 +36,11 @@ It's a miniature version of the systems used by Amazon, Flipkart, or any major o
 ![image](https://github.com/user-attachments/assets/5dc79e7a-1a1d-4713-a2d4-b6d6165b803d)
 
 #### Data Sending Function (send_event): When the "send data" button is clicked
-o	A JSON event is created containing:
+1. A JSON event is created containing:
 -	user_id, activity, product, and timestamp
-o	This event is serialized into JSON and sent to Kafka using the producer.produce() method.
-o	producer.flush() ensures the message is actually pushed out (not stuck in buffer).
-o	A success message is displayed showing the sent event.
+2.	This event is serialized into JSON and sent to Kafka using the producer.produce() method.
+3.	producer.flush() ensures the message is actually pushed out (not stuck in buffer).
+4.	A success message is displayed showing the sent event.
 
 ![image](https://github.com/user-attachments/assets/8c1a3d9a-3990-49bb-82e0-9102dff71a77)
 
