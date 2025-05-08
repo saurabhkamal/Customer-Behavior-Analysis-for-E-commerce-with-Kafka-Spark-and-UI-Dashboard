@@ -1,4 +1,4 @@
-# Customer-Behavior-Analysis-for-E-commerce-with-Kafka-Spark-and-UI-Dashboard
+# Customer-Behavior-Analysis-for-E-commerce-with-Kafka-MongoDB-and-UI-Dashboard
 
 This project is designed to track and understand how customers interact with an e-commerce platform in real-time, using a combination of data simulation, processing, and visual reporting tools.
 
