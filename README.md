@@ -45,8 +45,8 @@ It's a miniature version of the systems used by Amazon, Flipkart, or any major o
 ![image](https://github.com/user-attachments/assets/8c1a3d9a-3990-49bb-82e0-9102dff71a77)
 
 This code is useful when:
-•	You're simulating customer behavior (like clicking or adding to cart).
-•	You want to stream this behavior in real-time to Kafka, which can then be processed using Apache Spark, stored in a database, or visualized in PowerBI dashboards.
+-	You're simulating customer behavior (like clicking or adding to cart).
+-	You want to stream this behavior in real-time to Kafka, which can then be processed using Apache Spark, stored in a database, or visualized in PowerBI dashboards.
 
 ### 2.	“customer_data_processor.py”
 customer_data_processor.py is a Kafka consumer application that continuously listens to real-time customer events from Kafka and stores them into MongoDB for persistent storage and later analysis.
