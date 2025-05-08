@@ -1,1 +1,53 @@
 # Customer-Behavior-Analysis-for-E-commerce-with-Kafka-Spark-and-UI-Dashboard
+
+This project is designed to track and understand how customers interact with an e-commerce platform in real-time, using a combination of data simulation, processing, and visual reporting tools.
+
+### Step 1: Simulating Customer Behavior
+A simple web interface allows you to mimic a customer visiting the website—selecting a product, clicking on items, or checking out. These actions are sent instantly to a system that handles real-time data (Kafka).
+
+### Step 2: Storing Customer Activity
+Once the simulated customer actions are sent, a background program listens to them continuously and saves this data into a database (MongoDB), so it can be analyzed later.
+
+### Step 3: Visual Dashboard for Insights
+A live dashboard reads this stored data and shows key insights like:
+- How active customers are over time
+- Which products are most popular
+- What actions customers take (like viewing, adding to cart, etc.)
+- Who the most active customers are
+
+The dashboard also includes filters so users can zoom in on specific dates, activities, or products.
+
+This project mimics how a modern online business tracks customer behavior to:
+- Improve marketing and product strategy
+- Identify top-performing products or power users
+- Detect changes in customer interest or behavior in real time
+
+It's a miniature version of the systems used by Amazon, Flipkart, or any major online retailer to stay competitive and customer-focused.
+
+
+### 1.	“customer_data_producer.py”:
+“customer_data_producer.py” is a Kafka producer application built using Streamlit (for the UI), Kafka (Confluent Cloud), and Python. Its primary purpose is to simulate and send customer behavior events (clickstream data) to a Kafka topic named "customer_click_data".
+
+#### Streamlit UI: •	A simple web form is created using Streamlit where a user can:
+- Input a user_id
+- Select an activity (like view_product, checkout, etc.)
+-	Select a product (like Laptop, mobile, etc.)
+
+![image](https://github.com/user-attachments/assets/5dc79e7a-1a1d-4713-a2d4-b6d6165b803d)
+
+#### Data Sending Function (send_event): When the "send data" button is clicked
+o	A JSON event is created containing:
+-	user_id, activity, product, and timestamp
+o	This event is serialized into JSON and sent to Kafka using the producer.produce() method.
+o	producer.flush() ensures the message is actually pushed out (not stuck in buffer).
+o	A success message is displayed showing the sent event.
+
+![image](https://github.com/user-attachments/assets/8c1a3d9a-3990-49bb-82e0-9102dff71a77)
+
+This code is useful when:
+•	You're simulating customer behavior (like clicking or adding to cart).
+•	You want to stream this behavior in real-time to Kafka, which can then be processed using Apache Spark, stored in a database, or visualized in PowerBI dashboards.
+
+### 2.	“customer_data_processor.py”
+customer_data_processor.py is a Kafka consumer application that continuously listens to real-time customer events from Kafka and stores them into MongoDB for persistent storage and later analysis.
+
