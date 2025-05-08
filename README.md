@@ -51,3 +51,34 @@ This code is useful when:
 ### 2.	“customer_data_processor.py”
 customer_data_processor.py is a Kafka consumer application that continuously listens to real-time customer events from Kafka and stores them into MongoDB for persistent storage and later analysis.
 
+![image](https://github.com/user-attachments/assets/4833c408-5532-4fd8-887e-59f9f63baef4)
+
+customer_data_processor.py is a Kafka consumer that continuously reads customer clickstream events from the Kafka topic customer_click_data, enriches them with Kafka metadata, and stores them into a MongoDB collection for further use in dashboards, analytics, or machine learning pipelines.
+
+### 3.	“customer_analytics.py”
+customer_analytics.py is a Streamlit-based analytics dashboard that connects to MongoDB, reads customer interaction data (produced via Kafka and stored earlier), and presents interactive visualizations and metrics about customer behavior on the e-commerce platform.
+
+It is used for real-time business intelligence and monitoring customer behavior trends like:
+•	Product interest
+•	User activity frequency
+•	Popular actions (e.g., view, add_to_cart)
+•	Most active users
+
+ ![image](https://github.com/user-attachments/assets/5fa06515-5958-498d-b767-bafea5914f89)
+
+ ![image](https://github.com/user-attachments/assets/9782ab87-6dab-4d12-8ea7-a3afd1261e46)
+
+![image](https://github.com/user-attachments/assets/4b895f2b-8da0-4ed4-9881-e11627028703)
+
+#### Charts and Visual Insights
+-	Activity Timeline: Shows number of activities over time (e.g., daily engagement trends).
+-	Product Distribution: Shows what products users interacted with most
+-	Activity Types: How many times each action was performed (e.g., "view_product" vs "checkout").
+-	Top 10 Active Users: Shows the most active users on your site (likely your power users).
+-	Sidebar Filters: 
+(a). Filter by date range
+(b). Filter by activity type (e.g., only “checkout”)
+(c). Filter by product (e.g., only “Laptop”)
+
+
+
